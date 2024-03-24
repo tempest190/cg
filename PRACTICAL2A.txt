@@ -1,0 +1,23 @@
+#include<graphics.h>
+#include<stdio.h>
+#include<conio.h>
+ void main(){
+ int gd=DETECT,gm;
+ int x,y,length,breadth;
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+setcolor(BLUE);
+x=getmaxx();
+y=getmaxy();
+line(x/2,0,x/2,y);
+line(0,y/2,x,y/2);
+outtextxy(100,50,"RECTANGLE");
+rectangle(100,200,299,120);
+outtextxy(130,260,"CIRCLE");
+circle(150,350,50);
+outtextxy(370,100,"ELLIPSE");
+ellipse(500,150,0,360,100,50);
+outtextxy(350,275,"HALF ELLIPSE");
+ellipse(529,360,0,180,50,100);
+getch();
+closegraph();
+}

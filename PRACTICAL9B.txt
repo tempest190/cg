@@ -1,0 +1,28 @@
+#include <graphics.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include<dos.h>
+
+void fill_circle(int x, int y, int fcolor, int bcolor) {
+    int current_color = getpixel(x, y);
+
+    if (current_color != bcolor && current_color != fcolor) {
+	putpixel(x, y, fcolor);
+	fill_circle(x + 1, y, fcolor, bcolor);
+	fill_circle(x - 1, y, fcolor, bcolor);
+	fill_circle(x, y + 1, fcolor, bcolor);
+	fill_circle(x, y - 1, fcolor, bcolor);
+    }
+}
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+    setcolor(10);
+    circle(280, 250, 30); // Adjust coordinates and radius as needed
+    fill_circle(280, 250, 12,10);
+    getch();
+    closegraph();
+    return 0;
+}

@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<stdlib.h>
+ void main(){
+ int gd=DETECT,gm,col=480,row=640,font=4;
+int direction=2,size=8,color=15;
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+cleardevice();
+while(!kbhit()){
+settextstyle(random(font),random(direction),random(size));
+setcolor(random(color));
+outtextxy(random(col),random(row),"AIFAZ");//delay(300);
+}
+closegraph();}

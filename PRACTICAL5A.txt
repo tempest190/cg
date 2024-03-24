@@ -1,0 +1,34 @@
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include<conio.h>
+void main() {
+int gd = DETECT, gm;
+initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
+int xc = 200, yc = 200, r = 100; // Circle parameters: center coordinates (xc, yc) and radius (r)
+int x = 0, y = r; // Initial points
+int p = 1 - r; // Initial decision parameter
+// Plot the initial points
+while(x<=y){
+putpixel(x + xc, y + yc, WHITE);
+putpixel(x + xc,-y + yc, WHITE);
+putpixel(-x + xc,-y + yc, WHITE);
+putpixel(-x + xc, y+ yc, WHITE);
+putpixel(y + xc, x + yc, WHITE);
+putpixel(y +xc, -x + yc, WHITE);
+putpixel(-y+xc, -x + yc, WHITE);
+putpixel(-y +xc,x+ yc , WHITE);
+// Mid-point is inside the circle
+if (p < 0){
+x=x+1;
+p =p+2*x+3;
+}
+else {
+x=x+1;
+y=y-1;
+p=p + 2 * (x - y) + 5;
+}
+}
+getch(); // Wait for a key press
+closegraph(); // Close graphics system
+}

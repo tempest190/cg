@@ -1,0 +1,20 @@
+#include<graphics.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+ void main(){
+int gd=DETECT,gm;
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+setfillstyle(SOLID_FILL,YELLOW);
+circle(200,180,130);
+floodfill(200,180,WHITE);
+setfillstyle(SOLID_FILL,BLACK);
+circle(160,150,30);
+floodfill(160,150,WHITE);
+setfillstyle(SOLID_FILL,BLACK);
+circle(250,150,30);
+floodfill(250,150,WHITE);
+ setcolor(BLACK);
+arc(197,200,209,330,50);
+getch();
+}

@@ -1,0 +1,24 @@
+#include<conio.h>
+#include<stdio.h>
+#include<graphics.h>
+#include<dos.h>
+void main(){
+int i;
+int gd=DETECT,gm;
+int x1,y1,x2,y2,x,y;
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+printf("Enter the two line pont x1,y1,x2,y2");
+scanf("%d\n%d\n%d\n%d",&x1,&y1,&x2,&y2);
+line(x1,y1,x2,y2);
+printf("\nEnter translation co-ordinated :x\t y\t \n");
+scanf("%d %d",&x,&y);
+x1=(x1+x);
+y1=(y1+y);
+x2=(x2+x);
+y2=(y2+y);
+printf("Line after translation");
+line(x1,y1,x2,y2);
+getch();
+closegraph();
+
+}

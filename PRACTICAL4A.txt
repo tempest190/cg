@@ -1,0 +1,33 @@
+#include<graphics.h>
+#include<conio.h>
+#include<stdio.h>
+#include<dos.h>
+void main(){
+int gd=DETECT,gm,i;
+int x1=100,y1=200,x2=300,y2=400;
+int dx,dy,step,xinc,yinc;
+int x,y;
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+dx=x2-x1;
+dy=y2-y1;
+if(dx>dy)
+{
+step=dx;
+}
+else
+{
+step=dy;
+}
+xinc=dx/step;
+yinc=dx/step;
+putpixel(x1,y1,WHITE);
+x=x1,y=y1;
+for(i=0;i<step;i++){
+x=x+xinc;
+y=y+yinc;
+putpixel(x,y,WHITE);
+delay(500);
+}
+getch();
+closegraph();
+}

@@ -1,0 +1,22 @@
+#include<graphics.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<stdio.h> 
+void flood(int,int,int,int);
+ void main(){int gd=DETECT,gm;
+clrscr();
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+ printf("Circlefilled by flood fill algorithm 4-connector:");
+circle(100,200,50);
+ flood(100,200,8,0);
+ getch();
+}
+void flood(int x,int y,int fill_col,int old_col)
+{
+if((getpixel(x,y)==old_col)){delay(50);
+putpixel(x,y,fill_col);
+flood(x+1,y,fill_col,old_col); 
+flood(x-1,y,fill_col,old_col);
+ flood(x,y+1,fill_col,old_col);
+flood(x,y-1,fill_col,old_col);}
+}
